@@ -18,4 +18,3 @@ Ex:python
 - data types:
 - collection data types:
 
-## 
