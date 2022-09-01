@@ -45,15 +45,8 @@
 <mark> what is the log_interval?</mark>
 <mark>What is the purpose for the random seed</mark>
 
-		n_epochs = 3
-		batch_size_train = 64
-		batch_size_test = 1000
-		learning_rate = 0.01
-		momentum = 0.5
-		log_interval = 10
-		random_seed = 1
-		torch.backends.cuddn.enabled = False
-		torch.manual_seed(random_seed)
+<img src = "/home/mingye/Documents/Notes/Python/pics/Screenshot from 2022-09-01 10-37-22.png">
+
 - `torch.manual_seed` - sets the seeds for generating random numbers. Generator object
 - the purpose of the random seed, is for repeatable experiments and anything using random generation
 - `cuDNN` use nondeterministic algorithms to disabled setting `torch.backends.cudnn.enabled - False`
@@ -109,21 +102,9 @@ loading the MNIST dataset
 1. train_loader (dataset used to train the AI model)
 2. test_loader (dataset used to test the AI Model)
 
-		train_loader = torch.utils.data.DataLoader(
-		torchvision.datasets.MNIST('/files/', train = True, download = True, transform = torchvision.transform.Compose([
-		torchvision.transform.ToTensor(),
-		torchvision.transforms.Normalize((0.1307,),(0.3081))
-		])),
-		batch_size = batch_size_train, shuffle = True
-		
-		Test_loader = torch.utils.data.DataLoader(
-		torchvision.datasets.MNIST('/files/', train=False, download=True,
-                             transform=torchvision.transforms.Compose([
-		torchvision.transforms.ToTensor(),
-        torchvision.transforms.Normalize(
-                                 (0.1307,), (0.3081,))
-                             ])),
-  		batch_size=batch_size_test, shuffle=True)
+<img src = "/home/mingye/Documents/Notes/Python/pics/Screenshot from 2022-09-01 10-37-48.png">
+
+<img src = "/home/mingye/Documents/Notes/Python/pics/Screenshot from 2022-09-01 10-37-22.png">
 
 - PyTorch's DataLoader contains a few interesting option other than the dataset and batch size
 - could use `num_workers>1` could be used to use subprocesses to asynchronously load data or pin_memory to speed up RAM to GPU transfers
