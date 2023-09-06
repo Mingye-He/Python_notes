@@ -7,46 +7,52 @@
 # Assignment: Lab: Topic 3 (Activity #1)
 # Date: 24/8/2023s
 
-import numpy as np
+from math import*
 
-# A) Force
-# Let the variable m represent mass of the object
-m = 27
-# Let the variable a represent the acceleration of the object
-a = 1.5
-#Calculate and print the force of the object by multiplying m with a
-print("Force is", m*a, "N")
-
+# A) Calculating Force
+# Printing a statement that
+# print("This program calculates the applied force give mass and acceleration")
+# m = float(input("Please enter the mass (kg):"))
+# a = float(input("Please enter the acceleration (m/s^2):"))
+#
+# def force():
+#     n = m * a
+#     return n
+#
+# print(f'Force is {force()} N')
 
 # B) Wavelength
-# Let d represent the distance of between crystal layers (nm)
-d = 0.025
-# Let theta represent the degree angle (degree)
-theta = 35
-# Calculating and print the length of wavelength of x-rayx)
-print("Wavelength is", 2*d*np.sin(np.radians(35)),"nm")
+print("This program calculates the wavelength given distance and angle")
+d = float(input("Please enter the distance (nm):"))
+theta = float(input("Please enter the angle (degrees):"))
+def wavelength():
+    rad = radians(theta)
+    w = 2 * d * sin(rad)
+    return w
+
+
+print(f'Wavelength is {wavelength()} nm')
 
 # C) Radioactive Decay
-# Let int_amt represent the initial amount of Radon 222 (grams)
-int_amt = 27
-# Let h represent the half life of Radon 222 (days)
+print("This program calculates the how much Radon-222 is left given time and initial amount")
+t = input("Please enter the time (days):")
+int_amount = input("Please enter the initial amount ")
 h = 3.8
-# Let t represent the amount of days it has been
-t =5
-# Calculating and printing the amount Radon 222 in a sentence
-print("Radon-222 left is ",int_amt*2**(-1*t/h), "g")
-
+def gram():
+    g = int_amount* pow(2, -1*t/h))
+    return g
+print(f'Radon-222 left is {gram()},g')
+# print("Radon-222 left is ",int_amt*2**(-1*t/h), "g")
 
 # D) Pressure
-# Let mol represent the moles of the ideal gas (mol)
-mol = 5
-# Let v represent the volume of the gas (m^3)
-v = 0.27
-# Let T represent the temperature in Kelvins of the gas
-T = 415
-#Let represent the gas constant (m^3Pa/K*mol)
-r = 8.314
-# Calculating the Pressure of the ideal gas
-print("Pressure is", mol*T*r/v/1000,"kPa")
+print("This program calculates the pressure given moles, volume, and temperature")
+mol = float(input("Please enter the number of moles:"))
+v = float(input("Please enter the volume (m^3):"))
+temp = float(input("Please enter the temperature (K):"))
+r = 8.314 #gas constant
 
+def pressure():
+    p = mol*temp*r/v/1000
+    return p
+print(f'Pressure is {pressure()} kPa')
 
